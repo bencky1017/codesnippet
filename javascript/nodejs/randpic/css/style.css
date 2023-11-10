@@ -126,18 +126,21 @@ a:active {
     margin: 10px;
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-} */
-
 .pic_size input {
     width: 80px;
     text-align: center;
+}
+
+.pic_backcolor input[type="text"],
+.pic_forecolor input[type="text"]{
+    width: 80px;
+    text-align: center;
+}
+
+.pic_size span,
+.pic_backcolor span,
+.pic_forecolor span{
+    display: inline-block;
 }
 
 .pic_format {
@@ -145,10 +148,16 @@ a:active {
     align-items: center;
 }
 
-.pic_format label {
+.pic_format label,
+.pic_text label {
+    width: 80px;
     height: 48px;
     line-height: 48px;
     text-align: center;
+}
+
+.pic_text input[type="text"]{
+    width: 200px;
 }
 
 .format_button {
@@ -158,7 +167,7 @@ a:active {
     width: 100px;
     line-height: 32px;
     border-radius: 8px;
-    padding: 0px 8px;
+    padding: 0px 0px 0px 8px;
     border: #a0cfff solid 1px;
     background-color: #ecf5ff;
     font-size: 16px;
@@ -169,7 +178,7 @@ a:active {
 .format_button label {
     display: flex;
     align-items: center;
-    margin-left: 8px;
+    margin-left: 4px;
 }
 
 .pic_text {
@@ -195,4 +204,18 @@ a:active {
 #show_text,
 #show_pic {
     margin: 0px 8px 0px 0px;
+}
+
+/* ************** 不同尺寸的适配 ************** */
+/* 响应式布局 - 媒体查询 */
+@media screen and (max-width: 460px) {
+    .boxboder {
+        grid-template-columns: auto auto auto;
+    }
+
+    .box-list {
+        width: 20vw;
+        min-width: 60px;
+        max-width: 180px;
+    }
 }

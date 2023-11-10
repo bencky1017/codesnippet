@@ -183,9 +183,10 @@ function generatePicture() {
     var port = 3000
 
     var relative_url = `${size}/${backcolor}/${forecolor}${type}${text}`;
-    // window.open(`http://${host}:${port}/${relative_url}`)
     console.log(relative_url);
     generateImage(size, backcolor, forecolor, format, pic_text);
+
+    // window.open(`http://${host}:${port}/${relative_url}`)
 
     // fetch(`http://${host}:${port}/${relative_url}`, {
     //     method: 'get'
