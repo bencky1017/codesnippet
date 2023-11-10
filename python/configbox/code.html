@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Snippet</title>
+    <!-- <link rel="stylesheet" href="../../resource/js/highlight/styles/vs2015.min.css"> -->
     <link rel="stylesheet" href="../../resource/css/style.css">
     <link rel="stylesheet" href="../../resource/css/highlight_person.css"><!-- 自定义高亮 -->
-    <link rel="stylesheet" href="../../resource/js/highlight/styles/vs2015.min.css">
 
     <script type="text/javascript" src="../../resource/js/index.js"></script>
     <script type="text/javascript" src="../../resource/js/highlight/highlight.min.js"></script>
@@ -24,10 +24,7 @@
 
 <body>
     <div class="codesnippet">
-        <pre>
-            <code id="code"  class=""></code>
-            <div class="copy" onclick="copyContent(document.getElementById('code').textContent)">复制代码</div>
-        </pre>
+        <pre><code id="code" class=""></code><div class="copy" onclick="copyContent(document.getElementById('code').textContent)">复制代码</div></pre>
     </div>
     <script>
         var pathName = window.location.href.split('?name=').at(-1);
@@ -43,23 +40,30 @@
 
             if (pathName_extend == undefined || pathName_extend == '') {
                 const getElementId = document.getElementById('code');
-                getElementId.innerHTML = "{code:404,error:'缺少参数文件类型'}"
+                getElementId.innerHTML = `{code: 4002, error: "缺少参数文件类型"}`
                 getElementId.className = 'plaintext'
                 hljs.highlightElement(getElementId);
             } else {
                 var type_index = extend_list.indexOf(pathName_extend)
-                var type = type_list[type_index]
-                var language = 'language-' + type //|| type;
+                if (type_index == -1) {
+                    const getElementId = document.getElementById('code');
+                    getElementId.innerHTML = `{code: 4003, error: "没有指定的文件类型 ${pathName_extend}"}`
+                    getElementId.className = 'plaintext'
+                    hljs.highlightElement(getElementId);
+                } else {
+                    var type = type_list[type_index]
+                    var language = 'language-' + type //|| type;
 
-                const getElementId = document.getElementById('code');
-                getElementId.className = language
+                    const getElementId = document.getElementById('code');
+                    getElementId.className = language
 
-                getFileToShow('code', pathName);
+                    getFileToShow('code', pathName);
+                }
             }
         }
         else {
             const getElementId = document.getElementById('code');
-            getElementId.innerHTML = "{code:404,error:'缺少参数 name'}"
+            getElementId.innerHTML = `{code: 4001, error: "缺少参数 name"}`
             getElementId.className = 'plaintext'
             hljs.highlightElement(getElementId);
         }
