@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成图片</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    <!-- <script type="text/javascript" src="./js/api.js"></script> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="contian">
+            <table border="1">
+                <tr>
+                    <td>
+                        <div class="example">
+                            <!-- 示例：<button type="button" onclick="window.open('http://localhost:3000/600x400/000/fff')">/600x400/000/fff</button> -->
+                            示例：<button type="button" onclick="generateImage('600x400','000000', 'ffffff', '', '')">/600x400/000/fff</button>
+                            <a href="javascript:localStorage.removeItem('bk_randpic_config');window.location.reload()"><button
+                                    src="">重置</button></a>
+                        </div>
+                        <form id="dynamicPicture">
+                            <div class="pic_size">
+                                <label for="picture_width">图片尺寸：</label>
+                                宽：<input type="number" id="picture_width" placeholder="600" value="600"> ×
+                                高：<input type="number" id="picture_height" placeholder="400" value="400">
+                            </div>
+                            <div class="pic_backcolor">
+                                <label for="backcolor_piker">背景颜色：</label>
+                                <input type="color" id="backcolor_piker" value="#000000">
+
+                                <label for="backcolor_value">颜色值：<strong>#</strong></label>
+                                <input type="text" id="backcolor_value" value="000000"
+                                    onkeyup="value=value.replace(/[^a-fA-F0-9]/g,'')"><!-- readonly -->
+                            </div>
+                            <div class="pic_forecolor">
+                                <label for="forecolor_piker">前景颜色：</label>
+                                <input type="color" id="forecolor_piker" value="#ffffff">
+
+                                <label for="forecolor_value">颜色值：<strong>#</strong></label>
+                                <input type="text" id="forecolor_value" value="ffffff"
+                                    onkeyup="value=value.replace(/[^a-fA-F0-9]/g,'')">
+                            </div>
+                            <div class="pic_format">
+                                <input type="checkbox" name="show_pic" id="show_pic" checked>
+                                <label for="show_pic">图片格式：</label>
+                                <div class="format_button">
+                                    <input type="radio" id="format_type_png" name="imageType" value="png" checked>
+                                    <label for="format_type_png">PNG 图片</label>
+                                </div>
+                                <div class="format_button">
+                                    <input type="radio" id="format_type_jpg" name="imageType" value="jpg">
+                                    <label for="format_type_jpg">JPG 图片</label>
+                                </div>
+                            </div>
+                            <div class="pic_text">
+                                <!-- <div class="show_text_button"> -->
+                                <input type="checkbox" name="show_text" id="show_text" checked>
+                                <label for="show_text">显示文字：</label>
+                                <!-- </div> -->
+                                <input type="text" id="text_value" value="dynamic Picture" placeholder="显示在图片上的文字">
+                            </div>
+                            <div class="generate">
+                                <button type="button" onclick="generatePicture()">生成图片</button>
+                            </div>
+                        </form>
+                    </td>
+                    <!-- <td>
+                        <iframe id="pic_iframe" src="http://localhost:3000/600x400/000/fff?text=dynamic%20Picture"
+                            frameborder="1" style="width: 100%;height: 100%;overflow: hidden;"></iframe>
+                        <script>
+                            var host = 'localhost'
+                            var port = 3000
+                            var pic_iframe = document.getElementById('pic_iframe');
+                            var pic_size = document.getElementById("picture_size").value;
+                            var pic_backcolor = document.getElementById("backcolor_value").value;
+                            var pic_forecolor = document.getElementById("forecolor_value").value;
+                            // var pic_format = document.getElementById("format_type").value;
+                            var pic_text = document.getElementById("text_value").value;
+                            pic_iframe.setAttribute('src', `http://${host}:${port}/${pic_size}/${pic_backcolor}/${pic_forecolor}/?text=${pic_text}`)
+                        </script>
+                    </td> -->
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="show_canvas"></div>
+    <script type="text/javascript" src="./js/createPic.js"></script>
+</body>
+
+</html>

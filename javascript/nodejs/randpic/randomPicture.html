@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0px;
+            background: #0e0e0e;
+            height: 100vh;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: block;
+            -webkit-user-select: none;
+            margin: auto;
+            background-color: hsl(0, 0%, 90%);
+            transition: background-color 300ms;
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="">
+    <script type="text/javascript">
+        document.querySelector('title').textContent = JSON.parse(localStorage.getItem('bk_randpic_data')).title;
+        document.querySelector('img').src = JSON.parse(localStorage.getItem('bk_randpic_data')).data;
+    </script>
+</body>
+
+</html>

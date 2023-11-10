@@ -1,0 +1,198 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    font-family: Arial, sans-serif, SimSun, 华文行楷, 宋体;
+}
+
+/* ********** 标签全局样式 ********** */
+div {
+    margin: 6px;
+}
+
+input {
+    height: 32px;
+    border-radius: 9px;
+    font-size: 18px;
+    font-weight: bold;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    color: #000000;
+    padding: 0px 10px;
+    margin: 2px 0px;
+    outline: none;
+}
+
+input[type="file"] {
+    height: 32px;
+    border-radius: 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    color: #409eff;
+    line-height: 32px;
+}
+
+
+textarea {
+    margin: 10px 0px;
+    border-radius: 9px;
+    font-size: 16px;
+    padding: 10px 10px;
+}
+
+pre {
+    margin: 10px 0px;
+    border-radius: 9px;
+    font-size: 16px;
+    padding: 10px 10px;
+    border: #a0cfff solid 1px;
+    width: 800px;
+    height: auto;
+    min-height: 10px;
+    white-space: pre-wrap;
+}
+
+button {
+    height: 32px;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0px 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    font-size: 16px;
+    color: #409eff;
+    transition: all 0.1s;
+}
+
+button:hover {
+    background-color: #409eff;
+    border: #409eff solid 1px;
+    color: #ffffff;
+    transition: all 0.1s;
+}
+
+select {
+    height: 32px;
+    line-height: 32px;
+    border-radius: 8px;
+    outline: none;
+    padding: 0px 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    font-size: 16px;
+    color: #409eff;
+    transition: all 0.1s;
+}
+
+option {
+    height: 32px;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0px 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    font-size: 16px;
+    transition: all 0.1s;
+}
+
+table {
+    margin: 10px;
+}
+
+table td {
+    padding: 0px 5px;
+}
+
+a:link {
+    color: #409eff;
+}
+
+a:visited {
+    color: #0061c2;
+}
+
+a:active {
+    color: #eb2a2a;
+}
+
+
+/* ********** 自定义设置 ********** */
+/* 外层包围 */
+.wrapper {
+    margin: 0px auto;
+}
+
+.contian {
+    margin: 10px;
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+.pic_size input {
+    width: 80px;
+    text-align: center;
+}
+
+.pic_format {
+    display: inline-flex;
+    align-items: center;
+}
+
+.pic_format label {
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.format_button {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 100px;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0px 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    font-size: 16px;
+    color: #409eff;
+    transition: all 0.1s;
+}
+
+.format_button label {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.pic_text {
+    display: flex;
+    align-items: center;
+}
+
+.show_text_button {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    width: 100px;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0px 8px;
+    border: #a0cfff solid 1px;
+    background-color: #ecf5ff;
+    font-size: 16px;
+    color: #409eff;
+    transition: all 0.1s;
+}
+
+#show_text,
+#show_pic {
+    margin: 0px 8px 0px 0px;
+}
