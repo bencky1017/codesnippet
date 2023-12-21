@@ -24,7 +24,7 @@ database
 
 跨域问题
 
-- [cros.js](./js/code.html?name=cros.js)
+- [cors.js](./js/code.html?name=cors.js)
 
 数据库操作
 
